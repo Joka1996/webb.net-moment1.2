@@ -1,0 +1,36 @@
+﻿@{
+    DateTime dateAndTime = DateTime.Now;
+    string dateNow = dateAndTime.ToShortDateString();
+
+}
+
+<!DOCTYPE HTML> 
+<html lang="se">
+    <head>      
+        <title>@ViewData["Title"]</title>
+        <link rel="stylesheet" href="~/css/styles.css"  asp-append-version="true"/>
+    </head>
+    <body>
+        <div class="container">
+            <header> 
+               <img class="logo" src="https://i.postimg.cc/Fzh9gvsn/kungfupanda.jpg" />
+            <div class="date"><p>datum: @dateNow</p></div>   
+            </header>
+            
+            <nav>
+                <ul>
+                    <li> <a href="/">Startsidan</a> </li>
+                    <li> <a href="/razor">Razor</a> </li>
+                    <li> <a href="/about">Om</a> </li>
+                </ul>
+            </nav>
+
+            <main>
+                @RenderBody()
+            </main>
+           
+            <footer id="footer"><p>Av Joel Karlsson - Kontakta mig via e-post: <a href="mailto:joka2005@student.miun.se">joka2005@student.miun.se </a></p>  <button id="button" onclick="changeColor()">Byt footer-färg</button> </footer>
+        </div>
+        <script src="~/js/main.js"> </script>
+    </body>
+</html>
